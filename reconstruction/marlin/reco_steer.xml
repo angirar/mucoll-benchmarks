@@ -33,6 +33,9 @@
     <processor name="LCIOWriter_all"/>
     <processor name="LCIOWriter_light"/>
 
+    <!-- ========== TrackPerf ========== -->
+    <processor name="MyLCParquet"/>
+    
   </execute>
 
 
@@ -121,5 +124,18 @@
     <parameter name="Verbosity" type="string">WARNING </parameter>
   </processor>
 
+
+  <!-- Tracking performance -->
+  <processor name="MyLCParquet" type="TrackPerfParquet">
+    <!--Location of output-->
+    <parameter name="OutputDir" type="string">data_acts</parameter>
+    <!--Name of the MCParticle collection-->
+    <parameter name="MCParticleCollection" type="string" lcioInType="MCParticle">MCParticle</parameter>
+    <!--Name of the Track collection-->
+    <parameter name="TrackCollection" type="string" lcioInType="Track">Tracks</parameter>
+    <!--Relations-->
+    <parameter name="MCTrackRelationCollection" type="string" lcioInType="LCRelation">MCParticle_Tracks</parameter>
+  </processor>
+  
 </marlin>
 
