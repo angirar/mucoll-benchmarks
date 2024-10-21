@@ -34,8 +34,8 @@
   <parameter name="CKF_NumMeasurementsCutOff" type="int">1</parameter>
   <!--Define input tracker hits and relations. NB. Order must be respected -->
   <parameter name="TrackerHitCollectionNames" type="StringVec" lcioInType="TrackerHitPlane">
-    VXDBarrelHits   <!-- instead of VXDBarrelHits_DLFiltered -->
-    VXDEndcapHits   <!-- instead of VXDEndcapHits_DLFiltered -->
+    VXDBarrelHits
+    VXDEndcapHits
     ITBarrelHits
     ITEndcapHits
     OTBarrelHits
