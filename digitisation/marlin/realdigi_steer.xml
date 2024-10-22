@@ -30,14 +30,14 @@
     </if>
     <if condition="Config.OverlayFullRandom">
       <processor name="OverlayFullRandom"/>
-    </if> 
+    </if>
 
     <!-- ========== TrackerDigitisation.xml ========== -->
-    <processor name="VXDBarrelDigitiser"/>
-    <processor name="VXDEndcapDigitiser"/>
-    <processor name="ITBarrelDigitiser"/>
-    <processor name="ITEndcapDigitiser"/>
-    <processor name="OTBarrelDigitiser"/>
+    <processor name="VXDBarrelRealisticDigi"/> 
+    <processor name="VXDEndcapRealisticDigi"/>
+    <processor name="InnerPlanarRealisticDigi"/>
+    <processor name="InnerEndcapRealisticDigi"/>
+    <processor name="OuterPlanarRealisticDigi"/>
     <processor name="OTEndcapDigitiser"/>
 
     <!-- Including double-layer filtering if any Overlay is applied -->

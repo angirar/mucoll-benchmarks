@@ -12,13 +12,13 @@
   <parameter name="Verbosity" options="DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT">WARNING </parameter>
 
   <parameter name="Collection_IntegrationTimes" type="StringVec" >
-    VertexBarrelCollection -0.18 0.24
+    VertexBarrelCollection -1.0 15.0
     VertexEndcapCollection -0.18 0.24
 
-    InnerTrackerBarrelCollection -0.36 0.48
-    InnerTrackerEndcapCollection -0.36 0.48
+    InnerTrackerBarrelCollection -1.0 15.0
+    InnerTrackerEndcapCollection -1.0 15.0
 
-    OuterTrackerBarrelCollection -0.36 0.48
+    OuterTrackerBarrelCollection -1.0 15.0
     OuterTrackerEndcapCollection -0.36 0.48
 
     ECalBarrelCollection -0.25 10.
@@ -85,4 +85,54 @@
     <parameter name="NumberBackground" type="float" value="100" />
   </processor>
 
+  <processor name="OverlayIP" type="OverlayTimingGeneric">
+    <parameter name="MCPhysicsParticleCollectionName" type="string"> MCPhysicsParticles_IP </parameter>
+    <parameter name="Delta_t" type="float" value="10000"/>
+    <parameter name="MergeMCParticles" type="bool" value="true"/>
+    <parameter name="Collection_IntegrationTimes" type="StringVec" >
+      VertexBarrelCollection -0.5 15.                                                                                                                                                      
+      VertexEndcapCollection -0.5 15.
+      InnerTrackerBarrelCollection -0.5 15.0                                                                                                                                                
+      InnerTrackerEndcapCollection -0.5 15.0
+      OuterTrackerBarrelCollection -0.5 15.0                                                                                                                                                 
+      OuterTrackerEndcapCollection -0.5 15.0
+      ECalBarrelCollection -0.5 15.
+      ECalEndcapCollection -0.5 15.
+      ECalPlugCollection   -0.5 15.
+      HCalBarrelCollection -0.5 15.
+      HCalEndcapCollection -0.5 15.
+      HCalRingCollection   -0.5 15.
+      YokeBarrelCollection -0.5 15.
+      YokeEndcapCollection -0.5 15.
+    </parameter>
+  </processor>    
+
+  <processor name="OverlayFullRandom" type="OverlayTimingRandomMix">
+    <parameter name="Collection_IntegrationTimes" type="StringVec" >
+      VertexBarrelCollection -0.5 15.                                                                                                                                                        
+      VertexEndcapCollection -0.5 15.
+      InnerTrackerBarrelCollection -0.5 15.0
+      InnerTrackerEndcapCollection -0.5 15.0
+      OuterTrackerBarrelCollection -0.5 15.0
+      OuterTrackerEndcapCollection -0.5 15.0
+      ECalBarrelCollection -0.5 15.
+      ECalEndcapCollection -0.5 15.
+      ECalPlugCollection   -0.5 15.
+      HCalBarrelCollection -0.5 15.
+      HCalEndcapCollection -0.5 15.
+      HCalRingCollection   -0.5 15.
+      YokeBarrelCollection -0.5 15.
+      YokeEndcapCollection -0.5 15.
+    </parameter>
+    <parameter name="NumberBackground" type="float" value="2"/>
+    <parameter name="IntegrationTimeMin" type="float" value="-0.5"/>
+    <parameter name="PathToMuPlus" type="StringVec">
+      /global/cfs/cdirs/atlas/spgriso/MuonCollider/data/bib/10TeV-2023/MuColl_v1/sim_mp_pruned/
+    </parameter>
+    <parameter name="PathToMuMinus" type="StringVec">
+      /global/cfs/cdirs/atlas/spgriso/MuonCollider/data/bib/10TeV-2023/MuColl_v1/sim_mm_pruned/
+    </parameter>
+  </processor>
+  
+  
 </group>
